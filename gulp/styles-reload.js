@@ -8,5 +8,7 @@ exports.dependencies = ['styles'];
 exports.task = function () {
 	return func
 		.buildStyles()
-		.pipe(browserSync.stream());
+		.pipe(browserSync.stream({
+			stream: true
+		}));
 };

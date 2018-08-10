@@ -7,6 +7,8 @@ const func = require('./func');
 const $ = require('gulp-load-plugins')();
 const browserSync = require('browser-sync');
 
+const config = require('./const');
+
 exports.buildScripts = buildScripts;
 exports.buildStyles = buildStyles;
 exports.browserSyncInit = browserSyncInit;

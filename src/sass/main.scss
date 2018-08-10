@@ -1,3 +1,4 @@
-body {
-	background-color: pink;
-}
+@import "config/variables";
+@import "config/fonts";
+@import "bs/core-bs";
+@import "app/app-core";

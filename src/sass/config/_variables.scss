@@ -1,5 +1,64 @@
 /* VARIABLES
  * --------------------------
 */
+$enable-flex: true;     // fully adopt flexbox layouts
+$enable-shadows: true;  // enable shadows, set to false to turn off shadows
+
 $assets-root: '../assets/';
 $fonts-root: $assets-root + 'fonts/';
+
+$font-family-sans-serif:	Roboto, 'Segoe UI', 'Helvetica Neue', sans-serif;
+
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+
+$blue:    #3498db;
+$indigo:  #686de0;
+$purple:  #5f27cd;
+$pink:    #e91e63;
+$red:     #f44336;
+$orange:  #ff9800;
+$yellow:  #ffeb3b;
+$green:   #4caf50;
+$teal:    #009688;
+$cyan:    #00bcd4;
+
+$primary:       #487EB0;
+$secondary:     #484AB0;
+$success:       #4ABDAC;
+$info:          $cyan;
+$warning:       #FFC300;
+$danger:        #FF5733;
+$light:         $gray-100;
+$dark:          $gray-800;
+
+$theme-color-interval:      7%;
+
+$enable-rounded:            true;
+$enable-shadows:            true;
+
+$body-bg:                   #eaeaea;
+$body-color:                rgba(0,0,0,0.87);
+
+$link-color:                $primary;
+$link-decoration:           none;
+$link-hover-color:          #3F6E9A;
+$link-hover-decoration:     none;
+
+$font-size-base:              1.6rem;
+
+$display1-weight:             400;
+$display2-weight:             400;
+$display3-weight:             400;
+$display4-weight:             400;
+
+$table-cell-padding:          0.6rem;

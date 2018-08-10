@@ -3,10 +3,11 @@
 const path = require('path');
 const gulp = require('gulp');
 const conf = require('./conf');
+const gutil = require('gulp-util');
 const $ = require('gulp-load-plugins')();
 const browserSync = require('browser-sync');
 
-exports.dependencies = ['scripts', 'styles'];
+exports.dependencies = ['const', 'scripts', 'styles'];
 
 exports.task = function () {
 
@@ -17,8 +18,8 @@ exports.task = function () {
 
 	const injectScripts = gulp
 		.src([
-    	path.join(conf.paths.src, '/assets/js/**/*.js'),
-    	path.join(conf.paths.src, '/app/**/*.js')
+    	path.join(conf.paths.src, '/js/**/*.js'),
+			path.join('!' + conf.paths.src, '/js/plugin/**/*.js'),
   	])
   	.on('error', conf.errorHandler('AngularFilesort'));
 
