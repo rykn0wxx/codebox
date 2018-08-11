@@ -1,0 +1,28 @@
+$button-left-right-padding: rem(0.600);
+$button-fab-width: rem(5.600);
+$button-fab-height: rem(5.600);
+$button-fab-padding: rem(1.60);
+
+$button-border-radius: 2px;
+$button-fab-border-radius: 50%;
+$button-icon-border-radius: $button-fab-border-radius;
+
+$button-font-size: rem(1.400);
+
+$button-line-height: rem(3.60);
+$button-line-height-dense: rem(3.20);
+$button-margin: rem(0.600) rem(0.800);
+$button-min-width: rem(8.800);
+$button-padding: 0 $button-left-right-padding;
+
+// Fab buttons
+$button-fab-line-height: rem(5.600);
+$button-fab-mini-width: rem(4.00);
+$button-fab-mini-height: rem(4.00);
+$button-fab-mini-line-height: rem(4.00);
+
+$button-fab-toast-offset: $button-fab-height * 0.75;
+
+$icon-button-height: rem(4.000);
+$icon-button-width: rem(4.000);
+$icon-button-margin: rem(0.600);

@@ -1,0 +1,167 @@
+@mixin md-shadow-bottom-z-1() {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+@mixin md-shadow-bottom-z-2() {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+}
+
+@mixin dense($prop, $normal, $dense) {
+  #{$prop}: $normal;
+}
+
+@mixin pie-clearfix {
+  &:after, &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin rtl($prop, $ltr-value, $rtl-value) {
+  #{$prop}: $ltr-value;
+  [dir=rtl] & {
+    #{$prop}: $rtl-value;
+  }
+}
+
+// Placeholder text
+@mixin material-placeholder() {
+  &::-moz-placeholder {@content; } // Firefox
+  &:-ms-input-placeholder {@content; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  {@content; } // Safari and Chrome
+}
+
+@mixin input-placeholder-color($color) {
+  $pseudos: '::-webkit-input-placeholder', ':-moz-placeholder', '::-moz-placeholder',
+            ':-ms-input-placeholder',  '::-webkit-input-placeholder';
+
+  @each $pseudo in $pseudos {
+    &#{$pseudo} {
+      color: unquote($color);
+    }
+  }
+}
+
+@mixin md-button-variant($name, $value) {
+	$pri-color: $value;
+	$pri-contrast: color-yiq($value);
+	$accent-bg: theme-color-level($name, 6);
+	$accent-color: color-yiq($accent-bg);
+
+	color: $pri-color;
+
+	&:not([disabled]) {
+    &:hover {
+      background-color: rgba(158,158,158,0.2);
+    }
+    &.md-focused {
+      background-color: rgba(158,158,158,0.2);
+    }
+    &.md-icon-button:hover {
+      background-color: transparent;
+    }
+  }
+
+	&.md-raised,
+	&.md-fab {
+		color: $pri-contrast;
+		background-color: $pri-color;
+		&:not([disabled]) {
+			.material-icons {
+				color: rgba($pri-contrast, 0.87);
+			}
+			&:hover {
+				background-color: theme-color-level($name, 2);
+			}
+			&.md-focused {
+				background-color: theme-color-level($name, 2);
+			}
+		}
+	}
+	&:not([disabled]) {
+		.material-icons {
+			color: $pri-color;
+		}
+	}
+	&.md-icon-button {
+		.material-icons {
+			color: $pri-color;
+		}
+	}
+}
+
+@mixin md-input-theme {
+	$fg-1: rgba(0,0,0,0.87);
+	$fg-2: rgba(0,0,0,0.54);
+	$fg-3: rgba(0,0,0,0.38);
+	$fg-4: rgba(0,0,0,0.12);
+  .md-input {
+    color: $fg-1;
+    border-color: $fg-4;
+	}
+  label, .md-placeholder {
+    color: $fg-3;
+	}
+	label.md-required:after {
+    color: $danger;
+  }
+	&:not(.md-input-focused):not(.md-input-invalid) label.md-required:after {
+    color: $fg-2;
+	}
+  &:not(.md-input-invalid) {
+    &.md-input-has-value {
+      label {
+        color: $fg-2
+      }
+    }
+    &.md-input-focused,
+    &.md-input-resized {
+      .md-input {
+        border-color: $primary;
+      }
+    }
+
+    &.md-input-focused {
+      label, .material-icons {
+        color: $primary;
+      }
+      &.md-accent {
+        .md-input {
+          border-color: $secondary;
+        }
+        label, .material-icons {
+          color: $secondary;
+        }
+      }
+      &.md-warn {
+        .md-input {
+          border-color: $danger;
+        }
+        label, .material-icons {
+          color: $danger;
+        }
+      }
+    }
+	}
+	&.md-input-invalid {
+    .md-input {
+      border-color: $danger;
+    }
+    label,
+    .md-input-message-animation,
+    .md-char-counter {
+      color: $danger;
+    }
+  }
+  .md-input {
+    &[disabled],
+    [disabled] & {
+      border-bottom-color: transparent;
+      color: $fg-3;
+      background-image: linear-gradient(to right, $fg-3 0%, $fg-3 33%, transparent 0%);
+      background-image: -ms-linear-gradient(left, transparent 0%, $fg-3 100%);
+    }
+  }
+}
+

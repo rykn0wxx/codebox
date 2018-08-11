@@ -1,0 +1,132 @@
+.md-button {
+	display: inline-block;
+  position: relative; // Required for absolute canvas child elements.
+  cursor: pointer;
+	@include dense(min-height, $button-line-height, $button-line-height-dense);
+  min-width: $button-min-width;
+	@include dense(line-height, $button-line-height, $button-line-height-dense);
+  vertical-align: middle;
+  align-items: center;
+  text-align: center;
+
+  border-radius: $button-border-radius;
+  box-sizing: border-box;
+  user-select: none;
+  outline: none;
+  border: 0;
+
+  padding: $button-padding;
+  margin: $button-margin;
+
+  background: transparent;
+  color: currentColor;
+  white-space: nowrap;
+
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: inherit;
+  font-variant: inherit;
+  font-family: inherit;
+	letter-spacing: 0.01em;
+  text-decoration: none;
+  overflow: hidden;
+
+  transition: box-shadow $swift-ease-out-duration $swift-ease-out-timing-function,
+		background-color $swift-ease-out-duration $swift-ease-out-timing-function;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+
+  &.md-cornered {
+    border-radius: 0;
+  }
+
+  &.md-icon {
+    padding: 0;
+    background: none;
+  }
+
+  &.md-raised {
+    &:not([disabled]) {
+      @include md-shadow-bottom-z-1();
+    }
+  }
+
+  &.md-icon-button {
+    margin: 0 $icon-button-margin;
+    height: $icon-button-height;
+    min-width: 0;
+    line-height: $icon-size;
+    padding: $baseline-grid;
+    width: $icon-button-width;
+    border-radius: $button-icon-border-radius;
+  }
+
+  &.md-fab {
+
+    z-index: $z-index-fab;
+
+    line-height: $button-fab-line-height;
+
+    min-width: 0;
+    width: $button-fab-width;
+    height: $button-fab-height;
+    vertical-align: middle;
+
+    @include md-shadow-bottom-z-1();
+    border-radius: $button-fab-border-radius;
+    background-clip: padding-box;
+    overflow: hidden;
+
+    transition: $swift-ease-in;
+    transition-property: background-color, box-shadow, transform;
+
+    &.md-mini {
+      line-height: $button-fab-mini-line-height;
+      width: $button-fab-mini-width;
+      height: $button-fab-mini-height;
+    }
+  }
+
+  &:not([disabled]) {
+    &.md-raised,
+    &.md-fab {
+      &.md-focused {
+        @include md-shadow-bottom-z-1();
+      }
+      &:active {
+        @include md-shadow-bottom-z-2();
+      }
+    }
+  }
+
+	@each $color, $value in $theme-colors {
+	  &.md-#{$color} {
+	    @include md-button-variant($color, $value);
+	  }
+	}
+
+}
+
+.md-button.md-icon-button, button.md-button.md-fab {
+  .material-icons {
+    display: block;
+  }
+}
+
+.material-icons {
+	margin: auto;
+	background-repeat: no-repeat;
+	display: inline-block;
+	vertical-align: middle;
+	fill: currentColor;
+	height: 24px;
+	width: 24px;
+	min-height: 24px;
+	min-width: 24px;
+}

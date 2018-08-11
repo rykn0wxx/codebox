@@ -1,0 +1,27 @@
+$input-container-padding: 2px;
+
+$input-label-default-offset: 24px;
+$input-label-default-scale: 1.0;
+$input-label-float-offset: 6px;
+$input-label-float-scale: 0.75;
+$input-label-float-width: $input-container-padding + 16px;
+
+$input-placeholder-offset: $input-label-default-offset;
+
+$input-border-width-default: 1px;
+$input-border-width-focused: 2px;
+$input-line-height: 26px;
+$input-padding-top: 2px;
+
+$input-error-font-size: 12px;
+$input-error-height: 24px;
+$input-error-line-height: $input-error-font-size + 2px;
+$error-padding-top: ($input-error-height - $input-error-line-height) / 2;
+
+$icon-offset: 36px;
+
+$icon-top-offset: ($icon-offset - $input-padding-top - $input-border-width-focused) / 4;
+
+$icon-float-focused-top: -8px;
+
+$input-resize-handle-height: 10px;

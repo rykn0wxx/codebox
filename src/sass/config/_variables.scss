@@ -49,11 +49,17 @@ $enable-shadows:            true;
 $body-bg:                   #eaeaea;
 $body-color:                rgba(0,0,0,0.87);
 
+// Icon
+$icon-size: rem(2.400);
+
+$baseline-grid:            8px;
+
 $link-color:                $primary;
 $link-decoration:           none;
 $link-hover-color:          #3F6E9A;
 $link-hover-decoration:     none;
 
+$font-size:   								10px;
 $font-size-base:              1.6rem;
 
 $display1-weight:             400;
@@ -62,3 +68,50 @@ $display3-weight:             400;
 $display4-weight:             400;
 
 $table-cell-padding:          0.6rem;
+
+// Easing Curves
+//--------------------------------------------
+
+$swift-ease-out-duration: 0.4s;
+$swift-ease-out-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+$swift-ease-out: all $swift-ease-out-duration $swift-ease-out-timing-function;
+
+$swift-ease-in-duration: 0.3s;
+$swift-ease-in-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+$swift-ease-in: all $swift-ease-in-duration $swift-ease-in-timing-function;
+
+$swift-ease-in-out-duration: 0.5s;
+$swift-ease-in-out-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
+$swift-ease-in-out: all $swift-ease-in-out-duration $swift-ease-in-out-timing-function;
+
+$swift-linear-duration: 0.08s;
+$swift-linear-timing-function: linear;
+$swift-linear: all $swift-linear-duration $swift-linear-timing-function;
+
+$material-enter-duration: 0.3s;
+$material-enter-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+$material-enter: all $material-enter-duration $material-enter-timing-function;
+
+$material-leave-duration: 0.3s;
+$material-leave-timing-function: cubic-bezier(0.4, 0.0, 1, 1);
+$material-leave: all $material-leave-duration $material-leave-timing-function;
+
+// Z-indexes
+//--------------------------------------------
+
+$z-index-toast: 105;
+$z-index-tooltip: 100;
+$z-index-menu: 100;
+$z-index-calendar-pane: 100;
+$z-index-select: 90;
+$z-index-dialog: 80;
+$z-index-bottom-sheet: 70;
+$z-index-scroll-mask: 50;
+$z-index-scroll-mask-bar: 65;
+$z-index-sidenav: 60;
+$z-index-backdrop: 50;
+$z-index-fab: 20;
+$z-index-progress-circular: 2;
+
+@import "buttons";
+@import "input";
