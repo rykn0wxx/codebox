@@ -2891,6 +2891,10 @@ merge-stream@^1.0.0:
   dependencies:
     readable-stream "^2.0.1"
 
+metismenu@^2.7.9:
+  version "2.7.9"
+  resolved "https://registry.yarnpkg.com/metismenu/-/metismenu-2.7.9.tgz#78366586a0c29281ff503509b1c1f4a3338fb57a"
+
 micromatch@2.3.11, micromatch@^2.1.5, micromatch@^2.3.7, micromatch@^2.3.8:
   version "2.3.11"
   resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-2.3.11.tgz#86677c97d1720b363431d04d0d15293bd38c1565"
@@ -3474,6 +3478,10 @@ pause-stream@0.0.11:
   resolved "https://registry.yarnpkg.com/pause-stream/-/pause-stream-0.0.11.tgz#fe5a34b0cbce12b5aa6a2b403ee2e73b602f1445"
   dependencies:
     through "~2.3"
+
+perfect-scrollbar@0.6.13:
+  version "0.6.13"
+  resolved "https://registry.yarnpkg.com/perfect-scrollbar/-/perfect-scrollbar-0.6.13.tgz#53c6fbf6984bcf000c77e3aa6156ca8754a0116f"
 
 performance-now@^2.1.0:
   version "2.1.0"

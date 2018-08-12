@@ -10,6 +10,16 @@
 		$('.input-container .md-input').on('focus blur', function (i) {
 			$(this).parents('.form-group').toggleClass('md-input-focused', 'focus' === i.type || this.value.length > 0);
 		});
+		if ($('.tree').length !== 0) {
+			$('.tree').metisMenu({
+				triggerElement: '.treeview-link',
+				parentTrigger: '.treeview',
+				subMenu: '.treeview-menu'
+			});
+		}
+		if ($('.main-sidebar .sidebar-wrapper').length !== 0) {
+			$('.main-sidebar .sidebar-wrapper').perfectScrollbar();
+		}
 		console.log(msg);
 	}
 

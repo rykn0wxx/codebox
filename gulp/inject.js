@@ -7,7 +7,7 @@ const gutil = require('gulp-util');
 const $ = require('gulp-load-plugins')();
 const browserSync = require('browser-sync');
 
-exports.dependencies = ['const', 'scripts', 'styles'];
+exports.dependencies = ['scripts', 'styles'];
 
 exports.task = function () {
 

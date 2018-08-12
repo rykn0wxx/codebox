@@ -1,0 +1,245 @@
+$sidebar-width: 240px;
+$sidebar-bg: #383f48;
+$topbar-height: 60px;
+.main-sidebar {
+	position: fixed;
+	width: $sidebar-width;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1050;
+	background-color: $sidebar-bg;
+	box-shadow: $shadow-4dp;
+	.logo {
+		padding: 15px 0;
+		margin: 0;
+		display: block;
+		position: relative;
+		z-index: 4;
+		.logo-normal {
+			padding: 5px 0;
+			font-size: 1.8rem;
+			white-space: nowrap;
+			line-height: 20px;
+			overflow: hidden;
+			text-align: center;
+			display: block;
+		}
+	}
+}
+.sidebar-wrapper {
+	position: relative;
+	height: calc(100vh - 60px);
+	overflow: auto;
+	// width: $sidebar-width;
+	z-index: 4;
+	padding-bottom: 30px;
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.sidebar-menu {
+		margin-top: 20px;
+		display: block;
+		li.sidebar-header {
+			color: #4b646f;
+			background-color: shade($sidebar-bg, 10%);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: clip;
+			padding: 10px 25px 10px 15px;
+			font-size: 1.4rem;
+			font-weight: 500;
+			letter-spacing: 0.01em;
+		}
+	}
+	.tree {
+		.treeview {
+			position: relative;
+			border: 0;
+			margin: 0 0 10px 0;
+			&.active {
+				> a {
+					background-color: $secondary;
+					box-shadow: $shadow-3dp;
+					color: rgba(color-yiq($sidebar-bg),0.9);
+				}
+			}
+		}
+		.treeview-link {
+			margin: 10px 15px 0;
+			border-radius: 4px;
+			padding: 5px 15px;
+			font-size: 1.4rem;
+			transition: all 0.15s ease-in;
+			display: block;
+			position: relative;
+			white-space: nowrap;
+			color: rgba(color-yiq($sidebar-bg),0.7);
+			i {
+				font-size: 24px;
+				// float: left;
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 15px;
+				line-height: 30px;
+				height: 30px;
+				text-align: center;
+				color: rgba(color-yiq($sidebar-bg),0.5);
+			}
+			&:hover {
+				background-color: rgba(0,0,0,0.1);
+				color: rgba(color-yiq($sidebar-bg),0.9);
+			}
+		}
+		.treeview-content {
+			margin: 0;
+			line-height: 30px;
+			font-size: 1.4rem;
+			position: relative;
+			display: inline-block;
+			height: auto;
+			white-space: nowrap;
+		}
+		.treeview-menu {
+			margin: 5px 15px;
+			padding: 0;
+			&.collapse.in {
+				display: block;
+			}
+			> li {
+				list-style: none;
+				> a {
+					padding: 10px 35px 10px 15px;
+					display: block;
+					font-size: 1.4rem;
+					color: #798699;
+					white-space: nowrap;
+					transition: all 0.15s ease-in;
+					&:hover {
+						color: lighten(#798699, 30%);
+					}
+					&.active {
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+}
+.tree {
+	.collapsing {
+		position: relative;
+		height: 0;
+		overflow: hidden;
+		transition-timing-function: ease;
+		transition-duration: .35s;
+		transition-property: height, visibility;
+	}
+	.has-arrow {
+		position: relative;
+		&::after {
+			position: absolute;
+			content: '';
+			width: .5em;
+			height: .5em;
+			border-width: 1px 0 0 1px;
+			border-style: solid;
+			border-color: rgba(color-yiq($sidebar-bg),0.7);
+			right: 1em;
+			transform: rotate(-45deg) translate(0, -50%);
+			transform-origin: top;
+			top: 50%;
+			transition: all .3s ease-out;
+		}
+		&[aria-expanded="true"] {
+			&::after {
+				transform: rotate(-135deg) translate(0, -50%);
+				border-color: rgba(color-yiq($sidebar-bg),0.8);
+				border-width: 2px 0 0 2px;
+			}
+		}
+	}
+}
+.side-holder {
+	position: relative;
+	overflow: visible;
+	width: auto;
+	height: 100%;
+}
+@media (max-width: 991.98px) {
+	.mini-sidebar {
+		.sidebar-wrapper {
+			padding: 5px 0;
+			background: transparent;
+			.sidebar-menu.tree {
+				li {
+					position: relative;
+				}
+				> li {
+					> ul {
+						position: absolute;
+						left: 60px;
+						top: 45px;
+						width: 180px;
+						z-index: 1001;
+						background: #f2f6f8;
+						display: none;
+						padding-left: 1px;
+						margin: 0;
+						background-color: darken($sidebar-bg, 15%);
+					}
+					&:hover {
+						> ul {
+							height: auto !important;
+							overflow: auto;
+						}
+						> ul.collapse, > ul {
+							display: block;
+						}
+						> a {
+							width: 240px;
+							background-color: $secondary;
+							color: #fff;
+							i {
+								color: #fff;
+							}
+							.treeview-content {
+								display: inline;
+							}
+						}
+					}
+					> a {
+						z-index: 1002;
+						padding: 9px 15px;
+						width: 60px;
+						margin: 0;
+						&.has-arrow::after {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+		.main-sidebar {
+			position: absolute;
+			width: 60px;
+			overflow: visible;
+		}
+		.sidebar {
+			padding-bottom: 0;
+			position: absolute;
+			overflow: visible hidden;
+		}
+		.sidebar-header, .tree .treeview-content {
+			display: none;
+		}
+		.logo {
+			display: none;
+		}
+		.sidebar-menu {
+			margin-top: 45px;
+		}
+	}
+}
