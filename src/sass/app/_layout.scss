@@ -1,16 +1,43 @@
 html {
 	font-size: 62.5%;
 	line-height: 1.4;
+	min-height: 100%;
+	height: 100%;
 }
 body {
-  font-size: 1.6rem;
-	&.has-fixed-top {
-		padding-top: 70px;
-	}
+	font-size: 1.6rem;
+	max-height: 100%;
+	max-width: 100%;
+	min-height: 100%;
+	height: 100%;
+	position: relative;
 }
 
 a, button {
 	&:focus, &:active {
 		outline: none;
 	}
+}
+
+.wrapper {
+	height: auto;
+	min-height: 100%;
+}
+.content-wrapper {
+	margin-left: $sidebar-width;
+	padding-top: $topbar-height;
+	background-color: $content-bg;
+	z-index: 800;
+	transition: transform .3s ease-in-out,margin .3s ease-in-out;
+}
+.content {
+	min-height: 250px;
+	padding: 15px;
+	@include rtl('margin-left', auto, 0);
+	@include rtl('margin-right', auto, 0);
+}
+.main-header {
+	// max-height: $topbar-height;
+	min-height: $topbar-height;
+	margin-left: $sidebar-width;
 }

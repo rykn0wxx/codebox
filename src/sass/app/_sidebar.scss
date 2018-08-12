@@ -1,6 +1,3 @@
-$sidebar-width: 240px;
-$sidebar-bg: #383f48;
-$topbar-height: 60px;
 .main-sidebar {
 	position: fixed;
 	width: $sidebar-width;
@@ -11,7 +8,7 @@ $topbar-height: 60px;
 	background-color: $sidebar-bg;
 	box-shadow: $shadow-4dp;
 	.logo {
-		padding: 15px 0;
+		padding: 10px 0;
 		margin: 0;
 		display: block;
 		position: relative;
@@ -168,78 +165,87 @@ $topbar-height: 60px;
 	width: auto;
 	height: 100%;
 }
-@media (max-width: 991.98px) {
-	.mini-sidebar {
-		.sidebar-wrapper {
-			padding: 5px 0;
-			background: transparent;
-			.sidebar-menu.tree {
-				li {
-					position: relative;
+@mixin mini-side {
+	.sidebar-wrapper {
+		padding: 5px 0;
+		background: transparent;
+		.sidebar-menu.tree {
+			li {
+				position: relative;
+			}
+			> li {
+				> ul {
+					position: absolute;
+					left: $mini-sidebar;
+					top: 45px;
+					width: $sidebar-width - $mini-sidebar;
+					z-index: 1001;
+					background: #f2f6f8;
+					display: none;
+					padding-left: 1px;
+					margin: 0;
+					background-color: darken($sidebar-bg, 15%);
 				}
-				> li {
+				&:hover {
 					> ul {
-						position: absolute;
-						left: 60px;
-						top: 45px;
-						width: 180px;
-						z-index: 1001;
-						background: #f2f6f8;
-						display: none;
-						padding-left: 1px;
-						margin: 0;
-						background-color: darken($sidebar-bg, 15%);
+						height: auto !important;
+						overflow: auto;
 					}
-					&:hover {
-						> ul {
-							height: auto !important;
-							overflow: auto;
-						}
-						> ul.collapse, > ul {
-							display: block;
-						}
-						> a {
-							width: 240px;
-							background-color: $secondary;
-							color: #fff;
-							i {
-								color: #fff;
-							}
-							.treeview-content {
-								display: inline;
-							}
-						}
+					> ul.collapse, > ul {
+						display: block;
 					}
 					> a {
-						z-index: 1002;
-						padding: 9px 15px;
-						width: 60px;
-						margin: 0;
-						&.has-arrow::after {
-							display: none;
+						width: $sidebar-width;
+						background-color: $secondary;
+						color: #fff;
+						i {
+							color: #fff;
 						}
+						.treeview-content {
+							display: inline;
+						}
+					}
+				}
+				> a {
+					z-index: 1002;
+					padding: 9px 15px;
+					width: $mini-sidebar;
+					margin: 0;
+					&.has-arrow::after {
+						display: none;
 					}
 				}
 			}
 		}
-		.main-sidebar {
-			position: absolute;
-			width: 60px;
-			overflow: visible;
-		}
-		.sidebar {
-			padding-bottom: 0;
-			position: absolute;
-			overflow: visible hidden;
-		}
-		.sidebar-header, .tree .treeview-content {
-			display: none;
-		}
-		.logo {
-			display: none;
-		}
-		.sidebar-menu {
-			margin-top: 45px;
-		}
+	}
+	.main-sidebar {
+		position: absolute;
+		width: $mini-sidebar;
+		overflow: visible;
+	}
+	.sidebar {
+		padding-bottom: 0;
+		position: absolute;
+		overflow: visible hidden;
+	}
+	.sidebar-header, .tree .treeview-content {
+		display: none;
+	}
+	.logo {
+		display: none;
+	}
+	.sidebar-menu {
+		margin-top: 45px;
+	}
+	.content-wrapper, .main-header {
+		margin-left: $mini-sidebar;
+	}
+}
+.side-mini {
+	@include mini-side;
+}
+@media (max-width: 991.98px) {
+	.mini-sidebar {
+		@include mini-side;
 	}
 }

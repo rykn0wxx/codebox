@@ -48,6 +48,12 @@ $enable-shadows:            true;
 
 $body-bg:                   #eaeaea;
 $body-color:                rgba(0,0,0,0.87);
+$content-bg:								#ecf0f5;
+
+$sidebar-width: 240px;
+$sidebar-bg: #383f48;
+$topbar-height: 50px;
+$mini-sidebar: 60px;
 
 $ps-bar-container-hover-bg: lighten($secondary, 10%);
 $ps-bar-hover-bg: darken($secondary, 10%);
