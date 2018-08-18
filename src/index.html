@@ -14,92 +14,131 @@
 		<!-- css files will be automatically insert here -->
 		<!-- endinject -->
 	</head>
-	<body class="has-fixed-top mini-sidebar">
+	<body class="fixed mini-sidebar">
 
 		<div class="wrapper">
 
-			<aside class="main-sidebar">
-				<div class="side-holder">
-					<section class="sidebar">
-							<div class="logo">
-								<a href="#" class="logo-normal">
-									<b>admin</b>istrate
+			<header class="main-header fixed-top topbar">
+				<nav class="navbar top-navbar navbar-expand-md navbar-dark bg-dark">
+					<div class="navbar-header">
+						<a href="#" class="navbar-brand">
+							<span class="logo-lg"><b>admin</b>istrate</span>
+							<span class="logo-sm"><b>a</b>dm</span>
+						</a>
+					</div>
+					<div class="navbar-collapse">
+						<ul class="navbar-nav mr-auto mt-md-0">
+							<li class="nav-item">
+								<a href="#" class="nav-link nav-toggler hidden-md-up" data-mud-toggle="push-menu">
+									<span class="navbar-toggler-icon"></span>
 								</a>
-							</div>
-							<div class="sidebar-wrapper" data-mud-ps="pefect-scroll">
-								<ul class="sidebar-menu tree" data-mud-metis="tree">
-									<li class="sidebar-header">Header</li>
-									<li class="treeview">
-										<a href="#" class="treeview-link">
-											<i class="material-icons">mouse</i>
-											<span class="treeview-content">Menu1</span>
-										</a>
-									</li>
-									<li class="treeview">
-										<a href="#" class="treeview-link has-arrow" aria-expanded="false">
-											<i class="material-icons">color_lens</i>
-											<span class="treeview-content">Menu2</span>
-										</a>
-										<ul class="treeview-menu">
-											<li><a href="#">Menu2 Sub1</a></li>
-											<li><a href="#">Menu2 Sub2</a></li>
-											<li><a href="#">Menu2 Sub3</a></li>
-										</ul>
-									</li>
-									<li class="treeview">
-										<a href="#" class="treeview-link has-arrow" aria-expanded="false">
-											<i class="material-icons">healing</i>
-											<span class="treeview-content">Menu3</span>
-										</a>
-										<ul class="treeview-menu">
-											<li><a href="#">Menu3 Sub1</a></li>
-											<li><a href="#">Menu3 Sub2</a></li>
-											<li><a href="#">Menu3 Sub3</a></li>
-										</ul>
-									</li>
-								</ul>
-							</div>
-						</section>
-				</div>
-			</aside>
-	
-			<div class="content-wrapper">
-
-				<nav class="main-header navbar navbar-expand-md fixed-top navbar-dark bg-dark d-flex justify-content-between">
-					<a class="navbar-brand d-none d-sm-none d-md-block d-lg-block d-xl-block" href="#" data-mud-toggle="push-menu">
-						<span class="navbar-toggler-icon"></span>
-					</a>
-					<div>
-						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-header-content" aria-controls="main-header-content" aria-expanded="false" aria-label="Toggle navigation">
-							<span class="navbar-toggler-icon"></span>
-						</button>
-						<div class="collapse navbar-collapse" id="main-header-content">
-							<ul class="navbar-nav">
-								<li class="nav-item"><a href="#" class="nav-link">Link</a></li>
-								<li class="nav-item"><a href="#" class="nav-link">Link</a></li>
-								<li class="nav-item"><a href="#" class="nav-link">Link</a></li>
-							</ul>
-						</div>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link sidebar-toggler hidden-sm-down" data-mud-toggle="push-menu">
+									<div class="box-bar">
+										<span class="menu-bar"></span>
+										<span class="menu-bar"></span>
+										<span class="menu-bar"></span>
+										<span class="menu-bar"></span>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<ul class="navbar-nav my-lg-0 left-menu">
+							<li class="nav-item">
+								<a href="#" class="nav-link">
+									<i class="material-icons">save</i>
+								</a>
+							</li>
+						</ul>
 					</div>
 				</nav>
+			</header>
 
-	
-				<div class="content">
-					<div class="row">
-						<div class="col-12">
-							<h1>Some content</h1>
-						</div>
+			<aside class="main-sidebar">
+				<div class="sidebar-holder-wrapper">
+					<div class="scroll-sidebar">
+						<section class="sidebar">
+							<ul class="sidebar-menu" data-mud-metis="tree">
+								<li class="header">HEADER</li>
+								<li class="treeview">
+									<a href="javascript:void(0);" class="treeview-link">
+										<i class="material-icons">code</i>
+										<span class="hide-menu">Link1</span>
+									</a>
+								</li>
+								<li class="treeview">
+									<a href="javascript:void(0);" class="has-arrow treeview-link" aria-expanded="false">
+										<i class="material-icons">dashboard</i>
+										<span class="hide-menu">Link2</span>
+									</a>
+									<ul class="treeview-menu collapse" aria-expanded="false">
+										<li><a href="javascript:void(0);">Link in level 2</a></li>
+										<li><a href="javascript:void(0);">Link in level 2</a></li>
+									</ul>
+								</li>
+							</ul>
+						</section>
 					</div>
 				</div>
-	
-			</div>
-	
-			<div class="pre-loader">
+			</aside>
+
+			<div class="content-wrapper">
+				<section class="content-header">
+					<h1>
+						Dashboard
+						<small>Optional description</small>
+					</h1>
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="#"><i class="material-icons">dashboard</i></a></li>
+							<li class="breadcrumb-item active" aria-current="page">Here</li>
+						</ol>
+					</nav>
+				</section>
+				<section class="content container-fluid">
+					<div class="row">
+						<div class="col-md-3">
+							<div class="box collapsed-box">
+								<div class="box-header add-on">
+									<h4 class="box-title">Bo Header Title</h4>
+									<span class="flex"></span>
+									<button class="btn btn-box-tool" data-widget="collapse">
+										<i class="material-icons">add_box</i>
+									</button>
+								</div>
+								<div class="box-body">
+									Body
+								</div>
+								<div class="box-footer">
+									Footer
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="card">
+								<div class="card-header card-header-primary">
+									<h4 class="card-title">Card Title</h4>
+								</div>
+								<div class="card-body">
+									<div>Sort of a body</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="card">
+							Main Content
+						</div>
+					</div>
+				</section>
 			</div>
 
 		</div>
 
-		<script src="js/plugin/jquery.slim.js"></script>
+		<script src="js/plugin/jquery.js"></script>
 		<script src="js/plugin/popper.js"></script>
 		<script src="js/plugin/bootstrap.js"></script>
 		<script src="js/plugin/metisMenu.js"></script>

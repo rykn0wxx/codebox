@@ -1,15 +1,35 @@
 @mixin md-shadow-bottom-z-1() {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
-
 @mixin md-shadow-bottom-z-2() {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
 }
-
+@mixin hide-md-up {
+	@media (min-width: $screen-sm) {
+		&.hidden-md-up {
+			display: none !important;
+		} 
+	}
+}
+@mixin hide-sm-down {
+	@media (max-width: $screen-xs-max) {
+		&.hidden-sm-down {
+			display: none !important;
+		} 
+	}
+}
 @mixin dense($prop, $normal, $dense) {
   #{$prop}: $normal;
 }
-
+@mixin clrfx {
+	&:before, &::before, &:after, &::after {
+		content: '';
+		display: table;
+	}
+	&:after, &::after {
+		clear: both;
+	}
+}
 @mixin pie-clearfix {
   &:after, &::after {
     content: '';

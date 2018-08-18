@@ -7,8 +7,11 @@ $enable-shadows: true;  // enable shadows, set to false to turn off shadows
 $assets-root: '../assets/';
 $fonts-root: $assets-root + 'fonts/';
 
+$breadcrumb-divider: quote(">");
+
 $font-family-sans-serif:	Roboto, 'Segoe UI', 'Helvetica Neue', sans-serif;
 
+$off-white:#fafafa;
 $white:    #fff;
 $gray-100: #f8f9fa;
 $gray-200: #e9ecef;
@@ -50,8 +53,31 @@ $body-bg:                   #eaeaea;
 $body-color:                rgba(0,0,0,0.87);
 $content-bg:								#ecf0f5;
 
+$screen-xs:                  480px;
+//** Deprecated `$screen-xs-min` as of v3.2.0
+$screen-xs-min:              $screen-xs;
+//** Deprecated `$screen-phone` as of v3.0.1
+$screen-phone:               $screen-xs-min;
+
+$screen-sm:                  768px;
+$screen-sm-min:              $screen-sm;
+$screen-tablet:              $screen-sm-min;
+$screen-md:                  992px;
+$screen-md-min:              $screen-md;
+$screen-desktop:             $screen-md-min;
+
+$screen-lg:                  1200px;
+$screen-lg-min:              $screen-lg;
+$screen-lg-desktop:          $screen-lg-min;
+
+$screen-xs-max:              ($screen-sm-min - 1);
+$screen-sm-max:              ($screen-md-min - 1);
+$screen-md-max:              ($screen-lg-min - 1);
+
+$sidebar-color: #dadfe1;
+$sidebar-color-active: #fefefe;
 $sidebar-width: 240px;
-$sidebar-bg: #383f48;
+$sidebar-bg: #5e646b;
 $topbar-height: 50px;
 $mini-sidebar: 60px;
 
