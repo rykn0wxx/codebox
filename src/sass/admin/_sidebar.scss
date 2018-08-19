@@ -1,252 +1,134 @@
 .main-sidebar {
-  position: fixed;
+	position: fixed;
 	width: $sidebar-width;
 	height: 100%;
-	max-height: 100%;
-  top: 0px;
-  z-index: 20;
-  padding-top: $topbar-height;
-  background-color: $sidebar-bg;
-	box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
-	transition-duration: 0.5s;
-	transition-property: transform, margin, width;
-	transition-timing-function: cubic-bezier(.35,0,.25,1);
-	// overflow: auto;
-	.sidebar-holder-wrapper {
-		height: calc(100vh - 50px);
-		position: relative;
-		// overflow: visible;
-		width: auto;
-		// height: 100%;
-		.scroll-sidebar {
-			// position: relative;
-			overflow: hidden;
-			width: auto;
-			height: calc(100vh - 50px);
-			// padding-bottom: 60px;
-		}
-	}
-	.collapse.in {
-		display: block;
-	}
+	top: $topbar-height;
+	z-index: 20;
+	background: $sidebar-bg;
+	box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+	transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
 	.sidebar {
-		padding: 15px;
-		width: auto;
-		.sidebar-menu, ul {
-			margin: 0;
-			padding: 0;
-			list-style: none;
-			.treeview {
-				list-style: none;
-				a, .treeview-link {
-					color: $sidebar-color;
-					padding: 8px 35px 8px 15px;
-					display: block;
-					font-size: 15px;
-					border-radius: 4px;
-					white-space: nowrap;
-					&.active {
-						color: #263238;
-						font-weight: 500;
-					}
-					&:hover {
-						color: lighten($color: $sidebar-color, $amount: 9%);
-						background-color: rgba(0,0,0,0.08);
-					}
-				}
-				.treeview-menu {
-					padding-left: 5px;
-					padding-top: 10px;
-					li a {
-						padding: 10px 35px 10px 15px;
-					}
-				}
-				&.nav-divider {
-					height: 1px;
-					background: rgba(120, 130, 140, 0.13);
-					display: block;
-					margin: 20px 0;
-				}
-			}
-		}
+		position: relative;
+		height: calc(100vh - 50px);
+		overflow: auto;
+		width: $sidebar-width;
+		z-index: 4;
+		padding-bottom: 10px;
 		> .sidebar-menu {
 			> .treeview {
-				margin-bottom: 10px;
-				&.active {
-					> .treeview-link {
-						background-color: $secondary;
-						color: $sidebar-color-active;
-						font-weight: 500;
-						box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-						i {
-							color: $white;
-						}
-						&:hover {
-							color: $white;
-							background-color: darken($secondary, 5%);
-						}
-					}
-				}
 				> .treeview-link {
-					i {
-						width: 27px;
-						height: 27px;
-						font-size: 21px;
-						line-height: 27px;
-						display: inline-block;
-						vertical-align: middle;
-						color: rgba($white, 0.7);
-					}
-					&.active {
-						font-weight: 400;
-						background: #242933;
-						color: #3c8dbc;
-					}
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					max-width: 100%;
+					justify-content: space-between;
+					transition: all 150ms ease-in;
 				}
 			}
-		}
-		.has-arrow {
-			position: relative;
-			&::after {
-				position: absolute;
-				content: '';
-				width: .55em;
-				height: .55em;
-				border-width: 1px 0 0 1px;
-				border-style: solid;
-				border-color: $sidebar-color;
-				right: 1em;
-				transform: rotate(-45deg) translate(0, -50%);
-				transform-origin: top;
-				top: 47%;
-				transition: all .3s ease-out;
-			}
-		}
-		.active > .has-arrow::after,
-		li > .has-arrow.active::after,
-		.has-arrow[aria-expanded="true"]::after {
-			transform: rotate(-135deg) translate(0, -50%);
-			top: 45%;
-			width: 0.58em;
 		}
 	}
-	.treeview-menu {
-		&, > li {
+}
+.sidebar {
+	.sidebar-menu {
+		list-style: none;
+		margin-top: 10px;
+		display: block;
+		.treeview {
+			list-style: none;
+			.treeview-link {
+				margin: 10px 15px 0;
+				border-radius: 3px;
+				color: $sidebar-color;
+				padding-left: 10px;
+				padding-right: 10px;
+				text-transform: capitalize;
+				font-size: 1.5rem;
+				padding: 10px 15px;
+				i {
+					width: 27px;
+					height: 27px;
+					font-size: 21px;
+					line-height: 27px;
+					display: inline-block;
+					vertical-align: middle;
+					color: rgba($white, 0.7);
+					transform: rotate(0deg);
+					transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+				}
+			}
+		}
+	}
+	> .sidebar-menu {
+		> .treeview {
+			&.active {
+				> .treeview-link {
+					background-color: $secondary;
+					box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(tint($secondary, 50%), 0.12);
+					color: $sidebar-color-active;
+					.arrow {
+						transform: rotate(-90deg);
+					}
+				}
+			}
+		}
+	}
+}
+.treeview-menu {
+	list-style: none;
+	margin: 0;
+	padding: 5px 0 0 15px;
+	&.collapse.in {
+		display: block;
+	}
+	li {
+		margin-right: 15px;
+		a {
+			padding: 10px 20px 10px 20px;
+			display: block;
+			font-size: 1.5rem;
+			white-space: nowrap;
+			color: #798699;
+			transition: all 150ms ease-in;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			&:hover {
+				color: tint($secondary, 60%);
+				background-color: rgba(0,0,0,0.1);
+			}
+		}
+	}
+}
+.sidebar {
+	ul {
+		list-style: none;
+		li {
 			list-style: none;
 		}
 	}
-	.header {
-		color: #99abb4;
-		overflow: hidden;
-		text-overflow: clip;
-		white-space: nowrap;
-		padding: 14px 14px 14px 15px;
-		font-size: 1.3rem;
-		font-weight: 500;
-		letter-spacing: 0.02em;
+}
+.ps-on {
+	.main-sidebar {
+		height: 100%;
+		max-height: 100%;
 	}
 }
-@media (min-width: $screen-sm) {
+@media (min-width: 768px) {
 	.mini-sidebar {
-		.sidebar {
-			padding: 5px;
-			background: transparent;
-			.sidebar-menu {
-				li, .treeview {
-					position: relative;
-				}
-				> .treeview {
-					> ul {
-						position: absolute;
-						left: $sidebar-width - 200;
-						top: 45px;
-						width: 200px;
-						z-index: 1001;
-						background: rgba(0,0,0,0.5);
-						display: none;
-						padding-left: 1px;
-					}
-					&:hover {
-						> ul {
-							height: auto !important;
-							overflow: auto;
-							&, &.collapse {
-								display: block;
-							}
-						}
-						> .treeview-link {
-							width: $sidebar-width;
-							background: darken($secondary, 5%);
-							color: #ffffff;
-							transition: none !important;
-							border-color: darken($secondary, 8%);
-							i {
-								color: $sidebar-color-active;
-							}
-							.hide-menu {
-								display: inline;
-							}
-						}
-					}
-					> .treeview-link {
-						padding: 9px 15px;
-						transition: none !important;
-						width: $mini-sidebar - 10;
-					}
-					> .treeview-link.has-arrow::after {
-						display: none;
-					}
-					&.active {
-						> .treeview-link {
-							border-color: transparent;
-							&:hover {
-								background-color: darken($secondary, 5%);
-							}
-							&.active {
-								border-color: #009efb;
-							}
-						}
-					}
-				}
-			}
-		}
 		.main-sidebar {
-			// position: absolute;
-			width: $mini-sidebar;
-			// z-index: 9999;
-			.sidebar-holder-wrapper {
-				.scroll-sidebar {
-					padding-bottom: 0px;
-					position: absolute;
-				}
-			}
-		}
-		.hide-menu, .header {
-			display: none;
+			transform: translate(-$sidebar-width, 0);
 		}
 		.content-wrapper {
-			margin-left: $mini-sidebar;
+			margin-left: 0;
 		}
 	}
 }
-@media (max-width: $screen-xs-max) {
+@media (max-width: 767px) {
 	.main-sidebar {
-		left: -$sidebar-width;
-	}
-	.mini-sidebar {
-		.main-sidebar {
-			position: fixed;
-			left: -$sidebar-width;
-		}
-		&.show-sidebar {
-			.main-sidebar {
-				left: 0;
-			}
-		}
+		transform: translate(-$sidebar-width, 0);
 	}
 	.show-sidebar {
 		.main-sidebar {
-			left: 0;
+			transform: translate(0, 0);
 		}
 	}
 }

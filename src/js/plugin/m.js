@@ -159,7 +159,10 @@
 
 	function _perfectSbHandler (args) {
 		if ($(args.selector).length !== 0) {
-			$(args.selector).perfectScrollbar();
+			$(args.selector).perfectScrollbar({
+				suppressScrollX: true
+			});
+			$('body').addClass('ps-on');
 		}
 	}
 
