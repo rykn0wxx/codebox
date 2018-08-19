@@ -17,11 +17,11 @@ body {
 	color: rgba(0,0,0,0.87);
 }
 .wrapper {
-	@include clrfx;
+	// @include clrfx;
   height: 100%;
   position: relative;
-  overflow-x: hidden;
-  overflow-y: auto;
+  // overflow-x: hidden;
+  // overflow-y: auto;
 }
 .flex {
 	flex: 1;

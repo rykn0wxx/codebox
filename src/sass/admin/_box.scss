@@ -17,7 +17,7 @@
 	@include clrfx;
 }
 .box-header {
-  color: #444;
+  color: $body-color;
   display: block;
   padding: 10px;
 	position: relative;

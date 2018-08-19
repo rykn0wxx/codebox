@@ -140,3 +140,11 @@
 		}
 	}
 }
+
+.fixed {
+	.topbar {
+		&.fixed-top {
+			position: fixed;
+		}
+	}
+}

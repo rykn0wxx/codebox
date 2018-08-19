@@ -3,7 +3,7 @@
 @import "config/fonts";
 @import "config/mixins";
 @import "bs/core-bs";
-
+@import "ps/ps-core";
 @import "admin/admin-core";
 
 .hide {
@@ -13,12 +13,3 @@
 .wrapper {
 	background-color: tint(#343a40, 20%);
 }
-// .main-header {
-// 	background-color: #ff7043;
-// }
-// .main-sidebar {
-// 	background-color: #90a4ae;
-// }
-// .content-wrapper {
-// 	background-color: #03a9f4;
-// }

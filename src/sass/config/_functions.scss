@@ -7,3 +7,22 @@
 @function tint($color, $percentage) {
   @return mix(#fff, $color, $percentage);
 }
+@function get-me-color($bg-color) {
+	$r: red($bg-color);
+	$g: green($bg-color);
+	$b: blue($bg-color);
+	$yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+	$fg-color: rgba(0,0,0,0.87);
+	@if $yiq >= 0 and $yiq <= 50 {
+		$fg-color: rgba(255,255,255,1.0);
+	} @else if $yiq > 50 and $yiq <= 100 {
+		$fg-color: rgba(255,255,255,0.87);
+	} @else if $yiq > 100 and $yiq <= 150 {
+		$fg-color: rgba(255,255,255,0.7);
+	} @else if $yiq > 150 and $yiq <= 200 {
+		$fg-color: rgba(0,0,0,0.38);
+	} @else {
+		$fg-color: rgba(0,0,0,0.87);
+	}
+	@return $fg-color;
+}
